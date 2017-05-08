@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jun page</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+	<div class="col-sm-6 col-sm-offset-3">
+	<form action="form" method="post">
+		<div class="form-group">
+	        <label for="inputId">아이디</label>
+	        <input type="text" class="form-control" name="inputId" id="id" placeholder="아이디 입력">
+	        <p class="help-block">아이디는 영문자 소문자로 시작하고 5~10글자로 입력하세요.(특수문자는 포함되지 않습니다)</p>
+	    </div>
+		
+		<div class="form-group">
+	        <label for="InputEmail">이메일 주소</label>
+	        <input type="email" class="form-control" name="InputEmail" id="email" placeholder="이메일 주소">
+	      	<p class="help-block">이메일 형식에 맞게 작성하세요 (xxx@xxx.com)</p>
+	    </div>
+	   
+	    <div class="form-group">
+	        <label for="InputPwd">비밀번호</label>
+	        <input type="password" class="form-control" name="InputPwd" id="pwd" placeholder="비밀번호">
+	        <p class="help-block">6~10 영문 대소문자, 최소 1개의 숫자, 특수문자를 입력해야 합니다.</p>
+	    </div>
+	    <div class="form-group">
+	        <label for="InputPwd2">비밀번호 확인</label>
+	        <input type="password" class="form-control" name="in" id="pwd2" placeholder="비밀번호 확인">
+	        <p class="help-block">비밀번호를 다시 한번 입력 해 주세요</p>
+	    </div>
+	    <div class="form-group">
+	        <label for="username">이름</label>
+	        <input type="text" class="form-control" name="username" id="username" placeholder="이름을 입력해 주세요">
+	    </div>
+	    <div class="form-group text-center">
+	        <button type="submit" id="postForm" class="btn btn-info">회원가입<i class="fa fa-check spaceLeft"></i></button>
+	    </div>
+	</form>
+</div>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	// id 정규식 표현
+	var regId = /^[a-z][a-z0-9]{4,9}$/;
+
+	//pwd 정규식 표현
+	var regPwd = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,10}$/
+
+	//회원가입 버튼을 눌렀을 때 실행할 함수
+	$("form").on("submit", function(){
+		// id input 에 입력된 값을 읽어와서 inputId 에 대입
+		var inputId = $("#id").val();
+		// id input 읽어온 값을 id 정규 표현식에 맞는지 확인
+		var matchId = regId.test(inputId);
+		// 만약에 input 값이 정규표현식에 맞지 않으면
+		if(matchId == false){
+			alert("아이디를 확인 하세요"); // 알림창 띄우고
+		 	$("#id").focus(); //포커스는 input 요소로
+		 	return false; // 폼 제출을 막는다
+		}
+
+		// pwd input 에 입력된 value 읽어옴
+		var InputPwd =$("#pwd").val();
+		// 정규식 표현에 맞는지 확인
+		var matchPwd = regPwd.test(InputPwd);
+		if(matchPwd == false){ // 만약에 정규식 표현에 맞지 않다면 알림창 띄우고 pwd input 에 포커스하고 
+			alert("비밀번호를 확인 하세요");
+			$("#pwd").focus();
+			return false; // 폼 제출을 막는다.
+		}
+		if($("#id").val() == ""){
+			alert("아이디를 입력하세요.");
+			$("#id").focus();
+		}else if($("#pwd").val() == ""){
+			alert("비밀번호를 입력하세요.")
+			$("#pwd").focus();
+		}else if($("#pwd2").val() == ""){
+			alert("비밀번호를 확인해 주세요");
+			$("#pwd2").focus();
+		}else if($("#username").val() == ""){
+			alert("이름을 입력해주세요");
+			$("#username").focus();
+		}else if($("#pwd").val() != $("#pwd2").val()){
+			alert("비밀번호와 비밀번호 확인이 맞지 않습니다.");
+			$("#pwd").focus();
+		}else{
+			alert("회원가입 완료! 로그인을 해주세요.");
+		}
+		
+		location.href="/index.html";
+		
+	}); 
+
+
+
+
+</script>
+</body>
+</html>
