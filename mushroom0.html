@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>mushroom0.html</title>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<style>
+	div.container{
+		letter-spacing: 20px;
+	}
+</style>
+</head>
+<body>
+ 	<div class="container">
+ 		<button id="startBtn" class="btn btn-info">click</button>
+ 		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  | | |  &nbsp;&nbsp;  &nbsp;&nbsp; |   &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;   ||    |    |  | |   | |  | </div>
+ 		<div>  | | |  &nbsp;&nbsp;  || &nbsp;&nbsp;   |   |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    |   || | |   | | | |   </div>
+ 		<div> | | &nbsp;&nbsp;  &nbsp;&nbsp;  |  &nbsp;&nbsp;  | | ||  &nbsp;&nbsp; &nbsp;&nbsp; | | | &nbsp;&nbsp; | | |   ||  | | |  | </div>
+ 		<div>    || | |  |  | |  ||   | || &nbsp;&nbsp; |  |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |   |</div>
+ 		<div> || &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | | |    | ||  |   |   |   | | |  |   </div>
+ 		<div>|    |    |  | |   | |  | |  | | |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        |</div>
+ 		<div>   |   || | |   | | | | &nbsp;&nbsp;  &nbsp;&nbsp;  | | |    || &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |    </div>
+ 		<div>| |  | | |  &nbsp;&nbsp; ||  | | |  |  | |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |    | | ||   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | </div>
+ 		<div> ||  |  |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |    || | |  |  | |  ||   |</div>
+ 		<div>|  |   | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  &nbsp;&nbsp;| | |  &nbsp;&nbsp;| &nbsp;&nbsp;  |&nbsp;&nbsp;  &nbsp;&nbsp;  |   &nbsp;&nbsp; |  | |  &nbsp;&nbsp; | |  | </div>
+ 	</div>
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+	$("#startBtn").click(function(){
+
+		setInterval(function(){
+			var save1 = $(".container>div").eq(0).text();
+			var save2 = $(".container>div").eq(1).text();
+			var save3 = $(".container>div").eq(2).text();
+			var save4 = $(".container>div").eq(3).text();
+			var save5 = $(".container>div").eq(4).text();
+			var save6 = $(".container>div").eq(5).text();
+			var save7 = $(".container>div").eq(6).text();
+			var save8 = $(".container>div").eq(7).text();
+			var save9 = $(".container>div").eq(8).text();
+			var save0 = $(".container>div").eq(9).text();
+			$(".container>div").eq(0).text(save0);
+			$(".container>div").eq(1).text(save1);
+			$(".container>div").eq(2).text(save2);
+			$(".container>div").eq(3).text(save3);
+			$(".container>div").eq(4).text(save4);
+			$(".container>div").eq(5).text(save5);
+			$(".container>div").eq(6).text(save6);
+			$(".container>div").eq(7).text(save7);
+			$(".container>div").eq(8).text(save8);
+			$(".container>div").eq(9).text(save9);
+		},200);
+		
+	});
+</script>
+</body>
+</html>
