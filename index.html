@@ -107,5 +107,41 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+	<canvas id="backImg" width="1200" height="400"></canvas>
+</div>
+<script>
+	var canvas=document.querySelector("#backImg");
+	var context=canvas.getContext("2d");
+	var backImg=new Image();
+	backImg.src="images/backimg1.png";
+
+	var back1X=0;
+	var back1Y=0;
+	var back2X=-1200;
+	var back2Y=0;
+
+	setInterval(function(){
+
+		context.drawImage(backImg, back1X, 0, 1200, 400);
+		context.drawImage(backImg, back2X, 0, 1200, 400);
+
+		backScroll();
+	},20);
+
+	function backScroll(){
+		back1X+=5;
+		back2X+=5;
+
+		if(back1X==1200){
+			back1X=-1200;
+			back2X=0;
+		}
+		if(back2X==1200){
+			back2X=-1200;
+			back1X=0;
+		}
+	}
+</script>
 </body>
 </html>
